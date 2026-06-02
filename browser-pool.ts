@@ -131,6 +131,7 @@ export class BrowserPool {
 		this.launching = puppeteer.launch({
 			headless: true,
 			executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+			args: (process.env.PUPPETEER_ARGS ?? "").split(" ").filter(Boolean),
 		});
 
 		try {
