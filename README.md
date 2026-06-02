@@ -60,6 +60,11 @@ npm install
 > export PUPPETEER_EXECUTABLE_PATH=/path/to/chrome
 > ```
 
++> **Note:** When running inside Docker or other sandboxed environments, Chrome's setuid sandbox is typically unavailable. Pass the required flags via `PUPPETEER_ARGS`:
++> ```bash
++> export PUPPETEER_ARGS="--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage"
++> ```
+
 > **Note:** The first time `web_fetch` runs, `uvx` will download the trafilatura package (~10MB). Subsequent runs use the cached environment and are fast.
 
 ### Add to pi
